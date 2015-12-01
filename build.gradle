@@ -5,7 +5,7 @@ apply plugin: 'maven'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-version = '0.1.0'
+version = '0.1.1-SNAPSHOT'
 group = 'com.spiddekauga.kryo'
 
 jar {

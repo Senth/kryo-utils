@@ -1,4 +1,4 @@
-package com.spiddekauga.utils.kryo;
+package com.spiddekauga.kryo;
 
 /**
  * Copies some parts of an already tagged copied object

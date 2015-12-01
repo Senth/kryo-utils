@@ -1,4 +1,4 @@
-package com.spiddekauga.utils.kryo;
+package com.spiddekauga.kryo;
 
 import java.util.UUID;
 

@@ -1,4 +1,4 @@
-package com.spiddekauga.utils.kryo;
+package com.spiddekauga.kryo;
 
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.KryoSerializable;
@@ -13,7 +13,8 @@ import com.esotericsoftware.kryo.serializers.TaggedFieldSerializer;
  * <li>Check if object implements KryoPreWrite to call object.preWrite()</li>
  * <li>Call TaggedFieldSerializer.write(Kryo,Output)</li>
  * <li>Check if object implements KryoSerializable to call object.write(Kryo,Output)</li>
- * </ol><br/>
+ * </ol>
+ * <br/>
  * <br/>
  * Read follows these steps:
  * <ol>
@@ -21,8 +22,6 @@ import com.esotericsoftware.kryo.serializers.TaggedFieldSerializer;
  * <li>Check if object implements KryoSerializable to call object.write(Kryo,Input)</li>
  * <li>Check if object implements KryoPostRead to call object.postRead()</li>
  * </ol>
- *
- * 
  * @author Matteus Magnusson <matteus.magnusson@spiddekauga.com>
  */
 public class SerializableTaggedFieldSerializer extends TaggedFieldSerializer<Object> {

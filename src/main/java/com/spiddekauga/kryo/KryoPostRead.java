@@ -1,9 +1,8 @@
-package com.spiddekauga.utils.kryo;
+package com.spiddekauga.kryo;
 
 /**
  * When used together with #SerializableTaggedFieldSerializer which calls
  * {@link #postRead()}.
- * 
  * @author Matteus Magnusson <matteus.magnusson@spiddekauga.com>
  */
 public interface KryoPostRead {

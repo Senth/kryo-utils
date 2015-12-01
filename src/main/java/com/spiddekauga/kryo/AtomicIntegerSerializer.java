@@ -1,4 +1,4 @@
-package com.spiddekauga.utils.kryo;
+package com.spiddekauga.kryo;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -9,7 +9,6 @@ import com.esotericsoftware.kryo.io.Output;
 
 /**
  * Serializes AtomicInteger just as an Integer
- * 
  * @author Matteus Magnusson <matteus.magnusson@spiddekauga.com>
  */
 public class AtomicIntegerSerializer extends Serializer<AtomicInteger> {
