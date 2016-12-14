@@ -1,7 +1,5 @@
 apply plugin: 'java'
 
-sourceCompatibility = JavaVersion.VERSION_1_7
-targetCompatibility = JavaVersion.VERSION_1_7
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 version = '0.1.3-SNAPSHOT'
 group = 'com.spiddekauga.kryo'
@@ -13,8 +11,9 @@ jar {
     }
 }
 
-ext {
-    artifactId = 'kryo-utils'
+tasks.withType(JavaCompile) {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
 }
 
 repositories {
