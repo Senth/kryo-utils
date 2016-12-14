@@ -1,64 +1,27 @@
 apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'maven'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-version = '0.1.1'
+version = '0.1.2'
 group = 'com.spiddekauga.kryo'
 
 jar {
-	manifest {
-		attributes	'Implementation-Title': 'kryo-utils',
-					'Implementation-Version': version
-	}
+    manifest {
+        attributes 'Implementation-Title': 'kryo-utils',
+                'Implementation-Version': version
+    }
 }
 
 ext {
-	artifactId = 'kryo-utils'
-}
-
-task sourceJar(type: Jar) {
-	classifier = 'sources'
-	from sourceSets.main.allJava
-}
-
-artifacts {
-	archives sourceJar
-}
-
-configurations {
-	deployerJars
+    artifactId = 'kryo-utils'
 }
 
 repositories {
-	mavenCentral()
+    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-	compile "com.esotericsoftware:kryo:3.0.1"
-	deployerJars "org.apache.maven.wagon:wagon-ssh:2.2"
-}
-
-install {
-	repositories.mavenInstaller {
-		pom.artifactId = project.artifactId
-	}
-}
-
-uploadArchives {
-	repositories {
-		// Set mavenRepositoryUrl & mavenUserName inside gradle.properties
-		mavenDeployer {
-			configuration = configurations.deployerJars
- 			pom.artifactId = project.name
-			repository(url: mavenRepositoryUrl + '/releases') {
-				authentication(userName: mavenUserName)
-			}
-			snapshotRepository(url: mavenRepositoryUrl + '/snapshots') {
-				authentication(userName: mavenUserName)
-			}
-		}
-	}
+    compile "com.esotericsoftware:kryo:3.0.1"
 }
